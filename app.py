@@ -13,7 +13,7 @@ db=SQLAlchemy(app)
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100),nullable=False)
-    description = db.Column(db.String(1000),nullable=False)
+    description = db.Column(db.String(3000),nullable=False)
     completed = db.Column(db.Boolean,nullable=False)
 
     # def __init__(self,title,description,completed):
@@ -27,7 +27,7 @@ class Todo(db.Model):
 
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
-    password=db.Column(db.String(100))
+    password=db.Column(db.String(200))
 
 
 @app.route("/login",methods=["POST","GET"])
